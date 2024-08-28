@@ -1,4 +1,6 @@
+/* eslint-disable no-unused-vars */
 import React from "react";
+import PropTypes from "prop-types"; // Import PropTypes for prop validation
 import { Link } from "react-router-dom";
 
 export default function Article({
@@ -36,3 +38,16 @@ export default function Article({
     </Link>
   );
 }
+
+// Define PropTypes for validation
+Article.propTypes = {
+  flags: PropTypes.shape({
+    svg: PropTypes.string.isRequired,
+  }).isRequired,
+  name: PropTypes.shape({
+    common: PropTypes.string.isRequired,
+  }).isRequired,
+  population: PropTypes.number.isRequired,
+  region: PropTypes.string.isRequired,
+  subregion: PropTypes.string.isRequired,
+};
